@@ -9,16 +9,10 @@ function App() {
   const [orders, setOrders] = useState([])
   const [dark, setDark] = useState(true)
 
-  console.log('render App')
-
   const theme = {
     backgroundColor: dark ? '#333' : '#fffafa',
     color: dark ? '#fffafa' : '#333',
   }
-
-  // const filteredItems =  items.sort((prevItem, item) => {
-  //   return item.platinum < prevItem.platinum
-  // })
 
   return (
     <div className="app-container">
