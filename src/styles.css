@@ -1,0 +1,126 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #333;
+}
+
+.header {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid snow;
+  background-color: rgb(48, 43, 49);
+  z-index: 1;
+}
+
+.header input {
+  margin: 6px;
+  padding: 4px;
+}
+
+.header .title-container {
+  position: absolute;
+  margin: 0;
+  left: 10px;
+  color: snow;
+}
+
+.header button {
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  color: snow;
+  background-color: rgb(104, 123, 141);
+  border: 1px solid snow;
+}
+
+.scroll-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+.list-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  width: 1212px;
+  box-sizing: border-box;
+}
+
+.list-container .listing-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  padding: 6px 12px;
+  margin-top: 12px;
+  border-bottom: 1px solid snow;
+  box-sizing: border-box;
+}
+
+.sell-list-container .listing-container {
+  border-left: 5px solid lightgreen;
+}
+
+.buy-list-container .listing-container {
+  border-left: 5px solid lightskyblue;
+}
+
+
+.listing-container h2 {
+  width: 100%;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.listing-container div {
+  font-size: 18px;
+  width: 100%;
+  margin: 4px 0;
+}
+
+.listing-container .listing-price {
+  color: lightgreen;
+}
+
+/* .sell-list-container .listing-item {
+  color: lightgreen;
+}
+
+.buy-list-container .listing-item {
+  color: lightskyblue;
+} */
+
+@media all and (width <= 1220px) {
+  .scroll-container {
+    max-width: 600px;
+  }
+}
