@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wfm-frontend/static/css/main.215fccd2.css",
+    "main.js": "/wfm-frontend/static/js/main.41ec958a.js",
+    "index.html": "/wfm-frontend/index.html",
+    "main.215fccd2.css.map": "/wfm-frontend/static/css/main.215fccd2.css.map",
+    "main.41ec958a.js.map": "/wfm-frontend/static/js/main.41ec958a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.215fccd2.css",
+    "static/js/main.41ec958a.js"
+  ]
+}
