@@ -30,9 +30,13 @@ function App() {
 				<Scroll dark={dark}>
 					<div className="lists-container">
 						<div className="sell-list-container">
-              <div className='list-type-title'><h1>Sell</h1><div className='sell-list-marker'></div></div>
-							{orders
-								? orders
+							{orders ? (
+								<>
+									<div className="list-type-title">
+										<h1>Sell</h1>
+										<div className="sell-list-marker" />
+									</div>
+									{orders
 										.filter((order) => order.order_type === 'sell')
 										.sort((order, nextOrder) => {
 											return order.platinum - nextOrder.platinum
@@ -46,13 +50,18 @@ function App() {
 													key={order.creation_date}
 												/>
 											)
-										})
-								: null}
+										})}
+								</>
+							) : null}
 						</div>
 						<div className="buy-list-container">
-              <div className='list-type-title'><h1>Buy</h1><div className='buy-list-marker'></div></div>
-							{orders
-								? orders
+							{orders ? (
+                <>
+                <div className="list-type-title">
+                  <h1>Buy</h1>
+                  <div className="buy-list-marker" />
+                </div>
+								{orders
 										.filter((order) => order.order_type === 'buy')
 										.sort((order, nextOrder) => {
 											return nextOrder.platinum - order.platinum
@@ -66,8 +75,9 @@ function App() {
 													key={order.creation_date}
 												/>
 											)
-										})
-								: null}
+										})}
+                </>
+							)	: null}
 						</div>
 					</div>
 				</Scroll>

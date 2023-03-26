@@ -6,7 +6,7 @@ const Listing = ({ item, order, dark }) => {
       borderBottom: dark ? '1px solid snow' : '1px solid #333',
     },
 		price: {
-			color: dark ? 'lightgreen' : 'purple',
+			color: dark ? 'limegreen' : 'purple',
 		},
 	}
 

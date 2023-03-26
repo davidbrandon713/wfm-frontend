@@ -20,6 +20,7 @@ const Scroll = ({ children, dark }) => {
       className="scroll-container"
       style={{
         height: windowSize.height - 60,
+        width: '1220px',
         scrollbarColor: dark ? '#fffafa #333' : '#333 #fffafa',
       }}
     >

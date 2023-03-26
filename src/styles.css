@@ -101,6 +101,7 @@ body {
   align-items: center;
   flex-wrap: none;
   margin: 0;
+  width: 600px;
   padding: 30px 12px 30px;
 }
 
