@@ -20,7 +20,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #333;
 }
 
 .header {
@@ -33,12 +32,27 @@ body {
   width: 100%;
   border-bottom: 1px solid snow;
   background-color: rgb(48, 43, 49);
+  box-shadow: 0 0 12px black;
   z-index: 1;
 }
 
 .header input {
-  margin: 6px;
-  padding: 4px;
+  font-size: 16px;
+  width: 15rem;
+  color: snow;
+  background-color: #333;
+  border: 1px solid #999999;
+  margin: 0 12px;
+  padding: 6px;
+}
+
+.header input:hover {
+  border: 1px solid snow;
+}
+
+.header input:focus {
+  border: 1px solid snow;
+  outline: none;
 }
 
 .header .title-container {
@@ -46,6 +60,7 @@ body {
   margin: 0;
   left: 10px;
   color: snow;
+  pointer-events: none;
 }
 
 .header button {
@@ -62,27 +77,61 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
-  box-sizing: border-box;
   scrollbar-width: thin;
 }
 
-.list-container {
+.lists-container {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0;
-  width: 1212px;
+  padding: 0;
+  gap: 12px;
   box-sizing: border-box;
 }
 
-.list-container .listing-container {
+/* .lists-container div div:nth-child(2n - 1) {
+  background-color: #393939;
+} */
+
+.list-type-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: none;
+  margin: 0;
+  padding: 30px 12px 30px;
+}
+
+.list-type-title h1 {
+  margin: 0;
+  padding: 0 12px 0 0;
+}
+
+.list-type-title div {
+  margin: 0;
+  padding: 0;
+  height: 10px;
+  width: auto;
+  flex-grow: 1;
+}
+
+.list-type-title .sell-list-marker {
+  background-color: lightgreen;
+}
+
+.list-type-title .buy-list-marker {
+  background-color: lightskyblue;
+}
+
+.lists-container .listing-container {
   display: flex;
   flex-wrap: wrap;
+  height: 140px;
   width: 600px;
   padding: 6px 12px;
   margin-top: 12px;
-  border-bottom: 1px solid snow;
   box-sizing: border-box;
 }
 
@@ -107,10 +156,6 @@ body {
   margin: 4px 0;
 }
 
-.listing-container .listing-price {
-  color: lightgreen;
-}
-
 /* .sell-list-container .listing-item {
   color: lightgreen;
 }
@@ -121,6 +166,9 @@ body {
 
 @media all and (width <= 1220px) {
   .scroll-container {
+    max-width: 610px;
+  }
+  .lists-container {
     max-width: 600px;
   }
 }
