@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import ErrorBoundry from './components/error-boundry'
 import Header from './components/header'
+import ItemInfoComponent from './components/item-info-component'
 import Scroll from './components/scroll'
 import Listing from './components/listing'
 
 function App() {
-	const [item, setItem] = useState('Sample Text')
+	const [itemInfo, setItemInfo] = useState(null)
 	const [orders, setOrders] = useState([])
 	const [dark, setDark] = useState(true)
 
@@ -21,14 +22,18 @@ function App() {
 			className="app-container"
 			style={styles.theme}
 		>
-			<Header
-				setOrders={setOrders}
-				setItem={setItem}
-				setDark={setDark}
-			/>
+			<Header />
 			<ErrorBoundry>
 				<Scroll dark={dark}>
-					<div className="lists-container">
+					{
+						<ItemInfoComponent
+							itemInfo={itemInfo}
+							setItemInfo={setItemInfo}
+              setOrders={setOrders}
+							setDark={setDark}
+						/>
+					}
+					<div className="listings-container">
 						<div className="sell-list-container">
 							{orders ? (
 								<>
@@ -44,7 +49,7 @@ function App() {
 										.map((order) => {
 											return (
 												<Listing
-													item={item}
+													itemInfo={itemInfo}
 													order={order}
 													dark={dark}
 													key={order.creation_date}
@@ -56,12 +61,12 @@ function App() {
 						</div>
 						<div className="buy-list-container">
 							{orders ? (
-                <>
-                <div className="list-type-title">
-                  <h1>Buy</h1>
-                  <div className="buy-list-marker" />
-                </div>
-								{orders
+								<>
+									<div className="list-type-title">
+										<h1>Buy</h1>
+										<div className="buy-list-marker" />
+									</div>
+									{orders
 										.filter((order) => order.order_type === 'buy')
 										.sort((order, nextOrder) => {
 											return nextOrder.platinum - order.platinum
@@ -69,15 +74,15 @@ function App() {
 										.map((order) => {
 											return (
 												<Listing
-													item={item}
+													itemInfo={itemInfo}
 													order={order}
 													dark={dark}
 													key={order.creation_date}
 												/>
 											)
 										})}
-                </>
-							)	: null}
+								</>
+							) : null}
 						</div>
 					</div>
 				</Scroll>

@@ -1,29 +1,40 @@
 import React from 'react'
 
-const Listing = ({ item, order, dark }) => {
+const Listing = ({ itemInfo, order, dark }) => {
 	const styles = {
-    container: {
-      borderBottom: dark ? '1px solid snow' : '1px solid #333',
-    },
+		container: {
+			borderBottom: dark ? '1px solid snow' : '1px solid #333',
+		},
 		price: {
 			color: dark ? 'limegreen' : 'purple',
 		},
 	}
 
 	return (
-		<div className="listing-container" style={styles.container}>
-			<h2 className="listing-item">
-				{item} - {order.quantity}x
-			</h2>
-			<div className="listing-username">{order.user.ingame_name}</div>
-			<br />
+		itemInfo && (
 			<div
-				className="listing-price"
-				style={styles.price}
+				className="listing-container"
+				style={styles.container}
 			>
-				{order.platinum} platinum
+        <div className='listing-upper-container'>
+          <h1 className="listing-username">
+            {order.user.ingame_name}
+          </h1>
+        </div>
+        <div className='listing-mid-container'>
+          <p
+            className="listing-price"
+            style={styles.price}
+          >
+            {order.platinum} platinum
+          </p>
+          <p>{order.quantity}x</p>
+        </div>
+        <div className='listing-bot-container'>
+          <p>{order.user.reputation} +</p>
+        </div>
 			</div>
-		</div>
+		)
 	)
 }
 
