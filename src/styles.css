@@ -88,7 +88,9 @@ body {
   width: 200px;
 }
 
-
+.item-info-image-container > img {
+  width: 200px;
+}
 
 .item-info-main-container {
   position: relative;

@@ -2,6 +2,10 @@
   "name": "wfm-frontend",
   "version": "0.1.0",
   "homepage": "https://davidbrandon713.github.io/wfm-frontend",
+  "proxy": "https://api.warframe.market/v1/items/",
+  "externally_connectable": {
+    "matches": ["https://api.warframe.market/v1/items"]
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

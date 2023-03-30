@@ -7,7 +7,7 @@ import Listing from './components/listing'
 
 function App() {
 	const [itemInfo, setItemInfo] = useState(null)
-	const [orders, setOrders] = useState([])
+	const [orders, setOrders] = useState()
 	const [dark, setDark] = useState(true)
 
 	const styles = {

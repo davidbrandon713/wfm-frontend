@@ -6,7 +6,7 @@ const ItemInfoComponent = ({ itemInfo, setItemInfo, setOrders, setDark }) => {
 
   const getOrders = async () => {
 		const item = searchRef.current.value.split(' ').join('_').toLowerCase()
-		await fetch(`http://localhost:3002/${item}`, {
+		await fetch(`http://localhost:8081/${item}`, {
 			method: 'GET',
 			headers: {
 				'Access-Control-Allow-Origin': '*',
@@ -15,7 +15,7 @@ const ItemInfoComponent = ({ itemInfo, setItemInfo, setOrders, setDark }) => {
 			.then((res) => res.json())
 			.then((data) => setItemInfo(data))
       .then(
-        await fetch(`http://localhost:3002/${item}/orders`, {
+        await fetch(`http://localhost:8081/${item}/orders`, {
           method: 'GET',
           headers: {
             'Access-Control-Allow-Origin': '*',
@@ -33,19 +33,19 @@ const ItemInfoComponent = ({ itemInfo, setItemInfo, setOrders, setDark }) => {
 					<img
 						alt=""
 						src={`https://warframe.market/static/assets/${itemInfo?.icon}`}
-						style={{ width: '200px' }}
 					/>
 				</div>
 			)}
+      
 			<div className="item-info-main-container">
 				<div className="main-controls">
 					<button onClick={getOrders}>Get Orders</button>
 					<input
 						ref={searchRef}
 						type="search"
-						defaultValue={'ash prime set'}
+						defaultValue={'nekros prime set'}
 					/>
-					<button onClick={() => setDark}>Dark Mode</button>
+					<button onClick={() => setDark(prevDark => !prevDark)}>Dark Mode</button>
 				</div>
 				<h1 className="item-info-title">
 					<a href={itemInfo?.en?.wiki_link}>{itemInfo?.en?.item_name}</a>
