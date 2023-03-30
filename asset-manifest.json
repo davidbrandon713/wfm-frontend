@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/wfm-frontend/static/css/main.ac7544d2.css",
-    "main.js": "/wfm-frontend/static/js/main.8d8e4dc8.js",
+    "main.css": "/wfm-frontend/static/css/main.803afff6.css",
+    "main.js": "/wfm-frontend/static/js/main.82370087.js",
     "index.html": "/wfm-frontend/index.html",
-    "main.ac7544d2.css.map": "/wfm-frontend/static/css/main.ac7544d2.css.map",
-    "main.8d8e4dc8.js.map": "/wfm-frontend/static/js/main.8d8e4dc8.js.map"
+    "main.803afff6.css.map": "/wfm-frontend/static/css/main.803afff6.css.map",
+    "main.82370087.js.map": "/wfm-frontend/static/js/main.82370087.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac7544d2.css",
-    "static/js/main.8d8e4dc8.js"
+    "static/css/main.803afff6.css",
+    "static/js/main.82370087.js"
   ]
 }
