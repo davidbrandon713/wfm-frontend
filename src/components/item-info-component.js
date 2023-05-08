@@ -6,24 +6,18 @@ const ItemInfoComponent = ({ itemInfo, setItemInfo, setOrders, setDark }) => {
 
   const getOrders = async () => {
 		const item = searchRef.current.value.split(' ').join('_').toLowerCase()
-		await fetch(`http://localhost:8081/${item}`, {
-			method: 'GET',
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-			},
-		})
-			.then((res) => res.json())
-			.then((data) => setItemInfo(data))
-      .then(
-        await fetch(`http://localhost:8081/${item}/orders`, {
-          method: 'GET',
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-          },
-        })
-          .then((res) => res.json())
-          .then((data) => setOrders(data))
-      )
+    await fetch(`http://localhost:8081/${item}/orders`, {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setOrders(data.payload.orders.filter((order) => {
+					return order.user.status === 'ingame'
+				}))
+        setItemInfo(data.include.item.items_in_set.filter((itemData) => {
+          return itemData.url_name === item
+        })[0])
+      })
 	}
 
 	return (

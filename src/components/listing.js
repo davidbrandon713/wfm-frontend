@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Listing = ({ itemInfo, order, dark }) => {
+const Listing = ({ order, dark }) => {
 	const styles = {
 		container: {
 			borderBottom: dark ? '1px solid snow' : '1px solid #333',
@@ -11,7 +11,7 @@ const Listing = ({ itemInfo, order, dark }) => {
 	}
 
 	return (
-		itemInfo && (
+		order && (
 			<div
 				className="listing-container"
 				style={styles.container}

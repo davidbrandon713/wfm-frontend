@@ -299,9 +299,6 @@ body {
     min-width: 610px;
   }
 
-  .header {
-  }
-
   .item-info-container {
     flex-direction: row;
     flex-wrap: wrap;

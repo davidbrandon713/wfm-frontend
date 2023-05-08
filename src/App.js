@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ErrorBoundry from './components/error-boundry'
 import Header from './components/header'
 import ItemInfoComponent from './components/item-info-component'
@@ -74,10 +74,9 @@ function App() {
 										.map((order) => {
 											return (
 												<Listing
-													itemInfo={itemInfo}
+                          key={order.creation_date}
 													order={order}
 													dark={dark}
-													key={order.creation_date}
 												/>
 											)
 										})}
