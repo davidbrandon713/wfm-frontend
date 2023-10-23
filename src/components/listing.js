@@ -16,19 +16,17 @@ const Listing = ({ order, dark }) => {
 				className="listing-container"
 				style={styles.container}
 			>
-        <div className='listing-upper-container'>
-          <h1 className="listing-username">
-            {order.user.ingame_name}
-          </h1>
-        </div>
+        <h1 className="listing-username">
+          {order.user.ingame_name}
+        </h1>
         <div className='listing-mid-container'>
-          <p
+          <span
             className="listing-price"
             style={styles.price}
           >
             {order.platinum} platinum
-          </p>
-          <p>{order.quantity}x</p>
+          </span>
+          <span>{order.quantity}x</span>
         </div>
         <div className='listing-bot-container'>
           <p>{order.user.reputation} +</p>

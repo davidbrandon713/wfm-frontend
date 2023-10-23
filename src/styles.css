@@ -281,7 +281,8 @@ body {
   align-items: center;
 }
 
-.listing-container p {
+.listing-container p,
+.listing-container span {
   font-size: 20px;
   margin: 0;
 }
